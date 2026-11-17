@@ -1,0 +1,30 @@
+:root{--bg:#0b0f14;--card:#151b23;--fg:#f2f5f8;--mut:#8a97a6;--ok:#3ddc84;--warn:#ffb74d;--bad:#ff5252;--acc:#3ddc84}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:520px;margin:0 auto;padding:12px 14px calc(20px + env(safe-area-inset-bottom));padding-top:calc(12px + env(safe-area-inset-top))}
+header{display:flex;justify-content:space-between;align-items:center}
+h1{font-size:22px;margin:4px 0}
+.gps{font-size:13px;color:var(--mut)}
+label{display:block;font-size:14px;color:var(--mut);margin:12px 0}
+input[type=number]{display:block;width:100%;margin-top:6px;padding:14px;font-size:28px;background:var(--card);color:var(--fg);border:1px solid #2a3340;border-radius:10px}
+.row{display:flex;gap:12px}.row label{flex:1}
+.target{font-size:18px;margin:8px 0 12px}
+.check{display:flex;align-items:center;gap:10px;font-size:18px;color:var(--fg)}
+.check input{width:24px;height:24px}
+button{font:inherit;font-size:22px;font-weight:700;min-height:68px;border:0;border-radius:14px;background:#2a3340;color:var(--fg);flex:1}
+button.primary{width:100%;background:var(--acc);color:#04210f;margin-top:8px}
+button.danger{background:#5a1f1f}
+button:active{filter:brightness(1.2)}
+.btns{display:flex;gap:12px;margin-top:10px}
+.card{background:var(--card);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column}
+.hero{margin:10px 0;align-items:center;border:3px solid transparent}
+.hero.ok{border-color:var(--ok)}.hero.warn{border-color:var(--warn)}.hero.bad{border-color:var(--bad)}
+.lbl{font-size:13px;color:var(--mut)}
+.big{font-size:84px;font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums}
+.num{font-size:42px;font-weight:700;font-variant-numeric:tabular-nums}
+.sub{font-size:16px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wide{grid-column:span 2}
+#coach{font-size:22px;text-align:center;min-height:30px;margin:12px 0 0}
+#msg{color:var(--warn);font-size:16px;text-align:center;min-height:20px}
+#msg.err{color:var(--bad)}

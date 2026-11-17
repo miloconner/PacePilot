@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<title>PacePilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><h1>PacePilot</h1><span id="gps" class="gps">GPS off</span></header>
+
+  <section id="setup">
+    <label>Target distance (miles)
+      <input id="dist" type="number" inputmode="decimal" step="0.01" min="0.1" value="3.1"></label>
+    <div class="row">
+      <label>Minutes<input id="min" type="number" inputmode="numeric" min="0" value="27"></label>
+      <label>Seconds<input id="sec" type="number" inputmode="numeric" min="0" max="59" value="0"></label>
+    </div>
+    <div class="target">Target pace: <b id="tpMi">--:--</b> /mi &nbsp;|&nbsp; <b id="tpKm">--:--</b> /km</div>
+    <label class="check"><input id="voice" type="checkbox" checked> Spoken coaching</label>
+    <button id="start" class="primary">Start</button>
+  </section>
+
+  <section id="run" hidden>
+    <div class="card hero" id="curCard">
+      <span class="lbl">Current pace (last 30 s)</span>
+      <span class="big" id="cur">--:--</span>
+      <span class="sub">/mi &nbsp;|&nbsp; <span id="curKm">--:--</span> /km</span>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="lbl">Distance (mi)</span><span class="num" id="d">0.00</span></div>
+      <div class="card"><span class="lbl">Time</span><span class="num" id="t">0:00</span></div>
+      <div class="card"><span class="lbl">Average pace /mi</span><span class="num" id="avg">--:--</span></div>
+      <div class="card"><span class="lbl">Target pace /mi</span><span class="num" id="tp">--:--</span></div>
+      <div class="card wide"><span class="lbl">Estimated finish</span><span class="num" id="eta">--:--</span><span class="sub" id="etaD"></span></div>
+    </div>
+    <p id="coach"></p>
+    <div class="btns"><button id="pause">Pause</button><button id="end" class="danger">End</button></div>
+    <button id="again" class="primary" hidden>New run</button>
+  </section>
+
+  <p id="msg" role="status"></p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
